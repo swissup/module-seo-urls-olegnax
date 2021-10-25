@@ -8,12 +8,17 @@ class Filter
 {
     private $filter;
 
+    private $urlsHelper;
+
     /**
      * @param  \Olegnax\LayeredNavigation\Model\Layer\Filter $filter
+     * @param  \Swissup\SeoUrls\Helper\Data                  $urlsHelper
      */
     public function __construct(
-        \Olegnax\LayeredNavigation\Model\Layer\Filter $filter
+        \Olegnax\LayeredNavigation\Model\Layer\Filter $filter,
+        \Swissup\SeoUrls\Helper\Data $urlsHelper
     ) {
+        $this->urlsHelper = $urlsHelper;
         $this->filter = $filter;
     }
 
@@ -23,7 +28,11 @@ class Filter
         $item,
         $echoselected = ' checked'
     ) {
-        return $result . " data-href=\"{$item->getUrl()}\"";
+        if ($this->urlsHelper->isSeoUrlsEnabled()) {
+            return $result . " data-href=\"{$item->getUrl()}\"";
+        }
+
+        return $result;
     }
 
     public function afterGetSelectedSlider(
@@ -31,6 +40,10 @@ class Filter
         $result,
         $filter
     ) {
+        if (!$this->urlsHelper->isSeoUrlsEnabled()) {
+            return $result;
+        }
+
         $f = clone $filter;
         $filterItem = current($f->getItems());
         $value = $this->filter->getFilterValue($f);
