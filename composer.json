@@ -9,7 +9,7 @@
         "magento"
     ],
     "require": {
-        "swissup/module-seo-urls": "^1.5.28"
+        "swissup/module-seo-urls": "^1.5.25"
     },
     "type": "magento2-module",
     "version": "0.0.1",
