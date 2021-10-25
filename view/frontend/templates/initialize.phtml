@@ -1,0 +1,10 @@
+<script>
+    requirejs(['jquery', 'Swissup_SeoUrlsOlegnax/js/ajax-nav'],
+        function ($) {
+            "use strict";
+
+            $(function () {
+                $('body').OXAjaxNav(<?= $block->getNavConfig(); ?>);
+            });
+        });
+</script>

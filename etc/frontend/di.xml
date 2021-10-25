@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Olegnax\LayeredNavigation\Plugin\Catalog\Model\Layer\Filter\Item">
+        <arguments>
+            <argument name="url" xsi:type="object">Swissup\SeoUrls\Model\Url\Filter</argument>
+        </arguments>
+    </type>
+
+    <type name="Olegnax\LayeredNavigation\Block\LayeredNavigation\RenderLayered">
+        <arguments>
+            <argument name="url" xsi:type="object">Swissup\SeoUrls\Model\Url\Filter</argument>
+        </arguments>
+    </type>
+
+    <type name="Olegnax\LayeredNavigation\Model\Layer\Filter">
+        <plugin name="olegnaxModelLayerFilter" sortOrder="10" disabled="false"
+            type="Swissup\SeoUrlsOlegnax\Plugin\Model\Layer\Filter"
+        />
+    </type>
+
+    <type name="Olegnax\LayeredNavigation\Helper\Filter">
+        <plugin name="olegnaxHelperFilter" sortOrder="10" disabled="false"
+            type="Swissup\SeoUrlsOlegnax\Plugin\Helper\Filter"
+        />
+    </type>
+</config>
