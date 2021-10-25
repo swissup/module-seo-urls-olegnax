@@ -9,10 +9,10 @@
         "magento"
     ],
     "require": {
-        "swissup/module-seo-urls": "^1.5.25"
+        "swissup/module-seo-urls": "^1.5.28"
     },
     "type": "magento2-module",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "license": "MIT",
     "autoload": {
         "files": [ "registration.php" ],
