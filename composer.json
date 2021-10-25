@@ -1,0 +1,23 @@
+{
+    "name": "swissup/module-seo-urls-olegnax",
+    "description": "Integrate SEO Urls from Swissup with Layered Navigation module from Olegnax.",
+    "keywords": [
+        "sezzle",
+        "sezzlepay",
+        "swissup",
+        "recaptcha",
+        "magento"
+    ],
+    "require": {
+        "swissup/module-seo-urls": "^1.5.28"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0-alfa",
+    "license": "MIT",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Swissup\\SeoUrlsOlegnax\\": ""
+        }
+    }
+}
