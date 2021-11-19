@@ -29,7 +29,13 @@ class Filter
         $echoselected = ' checked'
     ) {
         if ($this->urlsHelper->isSeoUrlsEnabled()) {
-            return $result . " data-href=\"{$item->getUrl()}\"";
+            if (empty($result)) {
+                $url = $item->getUrl();
+            } else {
+                $url = $item->getRemoveUrl();
+            }
+
+            return $result . " data-href=\"{$url}\"";
         }
 
         return $result;
