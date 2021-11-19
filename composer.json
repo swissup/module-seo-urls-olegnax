@@ -12,7 +12,7 @@
         "swissup/module-seo-urls": "^1.5.28"
     },
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "autoload": {
         "files": [ "registration.php" ],
